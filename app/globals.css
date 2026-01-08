@@ -286,3 +286,55 @@
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
   pointer-events: none;
 }
+
+/* Chromatic glitch effect */
+@keyframes glitch-anim {
+  0% {
+    clip-path: inset(40% 0 61% 0);
+  }
+  20% {
+    clip-path: inset(92% 0 1% 0);
+  }
+  40% {
+    clip-path: inset(43% 0 1% 0);
+  }
+  60% {
+    clip-path: inset(25% 0 58% 0);
+  }
+  80% {
+    clip-path: inset(54% 0 7% 0);
+  }
+  100% {
+    clip-path: inset(58% 0 43% 0);
+  }
+}
+
+.chromatic-glitch {
+  position: relative;
+  animation: glitch-anim 3s infinite linear alternate-reverse;
+}
+
+.chromatic-glitch::before,
+.chromatic-glitch::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+}
+
+.chromatic-glitch::before {
+  animation: glitch-anim 2s infinite linear alternate-reverse;
+  filter: hue-rotate(90deg) brightness(1.2);
+  opacity: 0.3;
+  transform: translate(-2px, 0);
+}
+
+.chromatic-glitch::after {
+  animation: glitch-anim 3s infinite linear alternate-reverse;
+  filter: hue-rotate(-90deg) brightness(1.2);
+  opacity: 0.3;
+  transform: translate(2px, 0);
+}

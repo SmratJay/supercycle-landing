@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 
 export default function HeroSection() {
@@ -8,6 +9,19 @@ export default function HeroSection() {
   const [chartOpen, setChartOpen] = useState(false)
   const [swapOpen, setSwapOpen] = useState(false)
   const [comingSoonOpen, setComingSoonOpen] = useState(false)
+  const [copied, setCopied] = useState(false)
+
+  const contractAddress = "hRjhzK323Z6vZ6TgkLgdzR9b9MAy92pRnztE3XRbonk"
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(contractAddress)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch (err) {
+      console.error('Failed to copy:', err)
+    }
+  }
 
   const buttons = [
     { id: "buy", label: "BUY SUPERCYCLE", onClick: () => setSwapOpen(true) },
@@ -22,12 +36,60 @@ export default function HeroSection() {
       <div className="max-w-4xl w-full text-center z-10">
         {/* Main headline with backdrop */}
         <div className="bg-black/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 mb-8 border border-yellow-400/20 animate-fade-in">
-          <h1 className="text-7xl md:text-8xl font-bold mb-8 tracking-tight leading-none">
-            <span className="bg-gradient-to-b from-yellow-300 to-yellow-600 bg-clip-text text-transparent animate-fade-in-up delay-100">
+          {/* USD1 Bike Logo */}
+          <div className="flex justify-center mb-4 animate-fade-in">
+            <div className="relative w-32 h-32 md:w-40 md:h-40">
+              <Image
+                src="/IMG_5413.PNG"
+                alt="USD1 Bike Logo"
+                fill
+                className="object-contain drop-shadow-[0_0_25px_rgba(255,215,0,0.3)] animate-float"
+                priority
+              />
+            </div>
+          </div>
+
+          <h1 className="flex flex-col items-center justify-center mb-8 tracking-tight leading-none space-y-3">
+            <span className="text-white text-5xl md:text-7xl font-bold uppercase tracking-wider animate-fade-in-up delay-100">
               Welcome to the
             </span>
-            <br />
-            <span className="text-white animate-fade-in-up delay-200">SUPERCYCLE</span>
+            {/* 3D SUPERCYCLE Image with chromatic glitch effect */}
+            <div className="relative inline-block animate-fade-in-up delay-200">
+              <div className="relative w-[450px] h-[130px] md:w-[1000px] md:h-[220px]">
+                <Image
+                  src="/IMG_5417.PNG"
+                  alt="SUPERCYCLE"
+                  fill
+                  className="object-contain drop-shadow-[0_0_35px_rgba(255,215,0,0.5)]"
+                  priority
+                  quality={100}
+                  unoptimized
+                />
+                {/* Chromatic aberration layers */}
+                <div className="absolute inset-0 mix-blend-screen opacity-15">
+                  <Image
+                    src="/IMG_5417.PNG"
+                    alt=""
+                    fill
+                    className="object-contain"
+                    quality={100}
+                    unoptimized
+                    style={{ filter: 'hue-rotate(90deg)', transform: 'translate(-2px, 0)' }}
+                  />
+                </div>
+                <div className="absolute inset-0 mix-blend-screen opacity-15">
+                  <Image
+                    src="/IMG_5417.PNG"
+                    alt=""
+                    fill
+                    className="object-contain"
+                    quality={100}
+                    unoptimized
+                    style={{ filter: 'hue-rotate(-90deg)', transform: 'translate(2px, 0)' }}
+                  />
+                </div>
+              </div>
+            </div>
           </h1>
 
           {/* Subtext */}
@@ -35,6 +97,37 @@ export default function HeroSection() {
             <p>memecoin on solana</p>
             <p className="text-yellow-400">powered by vibes</p>
             <p>settled in usd1</p>
+          </div>
+
+          {/* Contract Address */}
+          <div className="mb-8 animate-fade-in-up delay-400">
+            <p className="text-gray-400 text-xs uppercase tracking-widest mb-2">Contract Address</p>
+            <button
+              onClick={copyToClipboard}
+              className="group relative px-4 py-3 bg-black/40 border border-yellow-400/30 rounded-lg hover:border-yellow-400 transition-all duration-300 overflow-hidden"
+            >
+              <div className="flex items-center gap-2">
+                <span className="text-yellow-400/80 group-hover:text-yellow-400 text-sm md:text-base font-mono transition-colors">
+                  {contractAddress.slice(0, 6)}...{contractAddress.slice(-6)}
+                </span>
+                <svg 
+                  className="w-4 h-4 text-yellow-400/60 group-hover:text-yellow-400 transition-colors" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+              </div>
+              {/* Hover effect */}
+              <div className="absolute inset-0 bg-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </button>
+            {/* Copied message */}
+            {copied && (
+              <p className="text-yellow-400 text-xs mt-2 animate-fade-in">
+                ✓ Copied to clipboard
+              </p>
+            )}
           </div>
 
           {/* Buttons with hierarchy */}
