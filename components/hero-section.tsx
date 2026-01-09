@@ -31,7 +31,7 @@ export default function HeroSection() {
 
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,215,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,215,0,0.05)_1px,transparent_1px)] bg-[size:50px_50px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,215,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,215,0,0.05)_1px,transparent_1px)] bg-size-[50px_50px] pointer-events-none" />
 
       <div className="max-w-4xl w-full text-center z-10">
         {/* Main headline with backdrop */}
@@ -55,7 +55,7 @@ export default function HeroSection() {
             </span>
             {/* 3D SUPERCYCLE Image with chromatic glitch effect */}
             <div className="relative inline-block animate-fade-in-up delay-200">
-              <div className="relative w-[450px] h-[130px] md:w-[1000px] md:h-[220px]">
+              <div className="relative w-112.5 h-32.5 md:w-250 md:h-55">
                 <Image
                   src="/IMG_5417.PNG"
                   alt="SUPERCYCLE"
@@ -191,7 +191,7 @@ export default function HeroSection() {
       {/* Chart Dialog */}
       <Dialog open={chartOpen} onOpenChange={setChartOpen}>
         <DialogContent className="max-w-[98vw] w-[98vw] h-[98vh] bg-black border-2 border-yellow-400 p-0 gap-0 flex flex-col">
-          <DialogHeader className="px-4 pt-3 pb-2 bg-black border-b border-yellow-400/30 flex-shrink-0">
+          <DialogHeader className="px-4 pt-3 pb-2 bg-black border-b border-yellow-400/30 shrink-0">
             <DialogTitle className="text-lg font-bold text-yellow-400 uppercase tracking-wider">SUPERCYCLE Chart</DialogTitle>
           </DialogHeader>
           <div className="flex-1 w-full" style={{ height: 'calc(98vh - 50px)' }}>
@@ -207,14 +207,14 @@ export default function HeroSection() {
 
       {/* Swap Dialog */}
       <Dialog open={swapOpen} onOpenChange={setSwapOpen}>
-        <DialogContent className="max-w-[600px] w-[95vw] h-[95vh] max-h-[800px] bg-black border-2 border-yellow-400 p-0 gap-0 overflow-auto">
-          <DialogHeader className="px-4 pt-3 pb-2 bg-black border-b border-yellow-400/30 flex-shrink-0 sticky top-0 z-10">
+        <DialogContent className="max-w-150 w-[95vw] h-[95vh] max-h-200 bg-black border-2 border-yellow-400 p-0 gap-0 overflow-auto">
+          <DialogHeader className="px-4 pt-3 pb-2 bg-black border-b border-yellow-400/30 shrink-0 sticky top-0 z-10">
             <DialogTitle className="text-lg font-bold text-yellow-400 uppercase tracking-wider">Buy SUPERCYCLE</DialogTitle>
           </DialogHeader>
-          <div className="w-full flex-1 min-h-[600px] overflow-auto">
+          <div className="w-full flex-1 min-h-150 overflow-auto">
             <iframe
               src="https://raydium.io/swap/?inputMint=sol&outputMint=hRjhzK323Z6vZ6TgkLgdzR9b9MAy92pRnztE3XRbonk"
-              className="w-full h-full min-h-[600px] border-0"
+              className="w-full h-full min-h-150 border-0"
               style={{ display: 'block' }}
               allow="clipboard-write"
             />
@@ -224,7 +224,7 @@ export default function HeroSection() {
 
       {/* Coming Soon Dialog */}
       <Dialog open={comingSoonOpen} onOpenChange={setComingSoonOpen}>
-        <DialogContent className="max-w-[500px] bg-black border-2 border-yellow-400">
+        <DialogContent className="max-w-125 bg-black border-2 border-yellow-400">
           <DialogHeader>
             <DialogTitle className="text-3xl font-bold text-yellow-400 uppercase tracking-wider text-center">Coming Soon</DialogTitle>
           </DialogHeader>

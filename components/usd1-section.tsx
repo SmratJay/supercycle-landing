@@ -3,7 +3,7 @@
 export default function Usd1Section() {
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden">
-      <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-yellow-400 to-transparent opacity-60 pointer-events-none" />
+      <div className="absolute left-1/2 top-0 bottom-0 w-px bg-linear-to-b from-transparent via-yellow-400 to-transparent opacity-60 pointer-events-none" />
 
       <div className="max-w-2xl w-full z-10 text-center">
         <div className="bg-black/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-yellow-400/20 animate-fade-in">

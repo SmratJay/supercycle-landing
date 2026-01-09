@@ -172,7 +172,7 @@ export function MemeDirectory() {
       )}
 
       {/* Entries */}
-      <div className="space-y-3 max-h-[600px] overflow-y-auto">
+      <div className="space-y-3 max-h-150 overflow-y-auto">
         {entries.map(entry => (
           <div
             key={entry.id}

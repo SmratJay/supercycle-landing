@@ -64,7 +64,7 @@ export function ManifestoTool() {
             <label className="text-sm font-semibold text-zinc-400 mb-2 block">
               Select Quote
             </label>
-            <div className="space-y-2 max-h-[400px] overflow-y-auto pr-2">
+            <div className="space-y-2 max-h-100 overflow-y-auto pr-2">
               {MANIFESTO_QUOTES.map(quote => (
                 <button
                   key={quote.id}
@@ -164,7 +164,7 @@ export function ManifestoTool() {
 
               {background === "gold" && (
                 <div className="absolute inset-0 opacity-20">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_black_100%)]" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,black_100%)]" />
                 </div>
               )}
             </div>

@@ -5,7 +5,7 @@ export default function SectionDivider() {
     <div className="relative w-full h-32 flex items-center justify-center overflow-hidden">
       {/* Main horizontal line with glow */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent animate-divider-glow" />
+        <div className="w-full h-px bg-linear-to-r from-transparent via-yellow-400 to-transparent animate-divider-glow" />
       </div>
 
       {/* Center geometric element */}

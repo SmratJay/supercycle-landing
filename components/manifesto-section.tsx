@@ -23,9 +23,9 @@ export default function ManifestoSection() {
 
           {/* Divider */}
           <div className="flex items-center justify-center gap-4 py-8 animate-fade-in delay-400">
-            <div className="flex-1 h-px bg-gradient-to-r from-transparent to-yellow-400/30" />
+            <div className="flex-1 h-px bg-linear-to-r from-transparent to-yellow-400/30" />
             <div className="w-1 h-1 bg-yellow-400 rounded-full" />
-            <div className="flex-1 h-px bg-gradient-to-l from-transparent to-yellow-400/30" />
+            <div className="flex-1 h-px bg-linear-to-l from-transparent to-yellow-400/30" />
           </div>
 
           {/* Manifesto block 2 */}
@@ -53,7 +53,7 @@ export default function ManifestoSection() {
 
       {/* Coming Soon Dialog */}
       <Dialog open={comingSoonOpen} onOpenChange={setComingSoonOpen}>
-        <DialogContent className="max-w-[500px] bg-black border-2 border-yellow-400">
+        <DialogContent className="max-w-125 bg-black border-2 border-yellow-400">
           <DialogHeader>
             <DialogTitle className="text-3xl font-bold text-yellow-400 uppercase tracking-wider text-center">Coming Soon</DialogTitle>
           </DialogHeader>

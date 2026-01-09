@@ -6,7 +6,7 @@ export default function CycleSection() {
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden">
       {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-yellow-900/20 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-r from-yellow-900/20 to-transparent pointer-events-none" />
 
       <div className="w-full z-10 max-w-5xl mx-auto">
         <div className="bg-black/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-yellow-400/20 animate-fade-in">

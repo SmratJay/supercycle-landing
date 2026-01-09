@@ -121,7 +121,7 @@ export function LiquiditySnapshotCard() {
                       <div className="text-sm font-semibold text-white">
                         {pool.memeName} / USD1
                       </div>
-                      <div className="text-xs text-zinc-500 font-mono truncate max-w-[200px]">
+                      <div className="text-xs text-zinc-500 font-mono truncate max-w-50">
                         {pool.memeMint.slice(0, 8)}...
                       </div>
                     </div>

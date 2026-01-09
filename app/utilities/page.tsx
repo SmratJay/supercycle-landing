@@ -35,7 +35,7 @@ export default function UtilitiesPage() {
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
       {/* Same cosmic background pattern from landing */}
-      <div className="fixed inset-0 bg-gradient-to-b from-black via-zinc-950 to-black" />
+      <div className="fixed inset-0 bg-linear-to-b from-black via-zinc-950 to-black" />
       
       {/* Grain overlay */}
       <div className="grain-overlay" />
@@ -44,7 +44,7 @@ export default function UtilitiesPage() {
       <div className="relative z-10 container mx-auto px-6 py-16">
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h1 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-black mb-6 bg-linear-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent">
             SUPERCYCLE OBSERVATORY
           </h1>
           <p className="text-xl text-zinc-400 max-w-2xl mx-auto mb-8">
@@ -197,7 +197,7 @@ function CycleStateBadge({ state, confidence }: { state: CycleState; confidence:
       <div
         className={`
           px-8 py-4 rounded-full
-          bg-gradient-to-r ${config.color}
+          bg-linear-to-r ${config.color}
           shadow-lg ${config.bgGlow}
           animate-pulse-slow
           transition-all duration-500

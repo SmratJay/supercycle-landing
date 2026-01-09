@@ -294,7 +294,7 @@ export function RotationVisual({ cycleState, className = "" }: RotationVisualPro
           <div
             className={`
               inline-block px-4 py-2 rounded-full text-sm font-semibold
-              bg-gradient-to-r from-yellow-500/20 to-yellow-600/20
+              bg-linear-to-r from-yellow-500/20 to-yellow-600/20
               border border-yellow-500/30
               text-yellow-400
               animate-fade-in
